@@ -3,12 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@deck.gl/experimental-layers": "^6.4.10",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "deck.gl": "^8.5.10",
     "mapbox-gl": "^1.9.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-map-gl": "^6.1.17",
     "react-scripts": "3.4.1"
   },
   "scripts": {
@@ -35,6 +38,9 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^3.1.0"
+    "gh-pages": "^3.1.0",
+    "json-loader": "^0.5.7",
+    "transform-loader": "^0.2.4",
+    "webworkify-webpack": "^1.0.6"
   }
 }

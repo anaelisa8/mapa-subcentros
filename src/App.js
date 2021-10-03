@@ -1,5 +1,6 @@
-import React from 'react';
+import React from "react";
 import Districts from "./Districts";
+import Deck from "./deck";
 
 function App() {
   return (
@@ -8,7 +9,7 @@ function App() {
         <h1>Mapa subcentros</h1>
       </header>
       <div className="body">
-        <Districts />
+        <Deck />
       </div>
     </div>
   );
