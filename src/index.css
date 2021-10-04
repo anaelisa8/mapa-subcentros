@@ -1,7 +1,7 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  margin: 10;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -9,25 +9,28 @@ body {
 
 h1 {
   margin-bottom: 0px;
+  position: relative;
+  z-index: 10;
+  color: #ffffff;
 }
 
-a{
+a {
   color: #000000;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-.app-header{
+.app-header {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.map{
+.map {
   margin: 0 auto;
   max-width: 800px;
   height: 600px;
@@ -37,7 +40,53 @@ code {
   width: 100%;
   text-align: center;
 }
-footer{
-  padding: 30px 20px
+footer {
+  padding: 30px 20px;
 }
 
+#foo {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 30px;
+}
+
+table.topazCells {
+  border: 4px solid #555555;
+  background-color: #555555;
+  width: 600px;
+  text-align: center;
+  border-collapse: collapse;
+  position: relative;
+  z-index: 10;
+  align-self: baseline;
+}
+table.topazCells td,
+table.topazCells th {
+  border: 1px solid #555555;
+  padding: 4px 7px;
+}
+table.topazCells tbody td {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+}
+table.topazCells tr:nth-child(even) {
+  background: #a43152;
+}
+table.topazCells td:nth-child(even) {
+  background: #a43152;
+}
+table.topazCells tfoot td {
+  font-size: 16px;
+}
+table.topazCells tfoot .links {
+  text-align: right;
+}
+table.topazCells tfoot .links a {
+  display: inline-block;
+  background: #ffffff;
+  color: #a43152;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
