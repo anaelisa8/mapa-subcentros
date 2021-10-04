@@ -15,7 +15,7 @@ const INITIAL_VIEW_STATE = {
   bearing: 0,
 };
 
-const MAP_STYLE = "mapbox://styles/mapbox/dark-v10";
+const MAP_STYLE = "mapbox://styles/mapbox/navigation-night-v1";
 const NAV_CONTROL_STYLE = {
   position: "absolute",
   top: 10,
@@ -77,4 +77,9 @@ Tópico 7: Centro de refracciones y gubernamental
 Tópico 9: Centro industrial y de refracciones
 Tópico 11 Centro médico, educativo y financiero
 Tópico 12: Centro comercial y educativo 
+
+Pendiente:
+-Colores de cada tópico
+-Añadir la leyenda de los tópicos
+-Que el mapa no haga tanto zoom
 */
