@@ -52,41 +52,34 @@ footer {
 }
 
 table.topazCells {
-  border: 4px solid #555555;
+  border: 4px solid #000000;
   background-color: #555555;
   width: 600px;
   text-align: center;
   border-collapse: collapse;
-  position: relative;
-  z-index: 10;
-  align-self: baseline;
 }
-table.topazCells td,
-table.topazCells th {
-  border: 1px solid #555555;
+table.topazCells td, table.topazCells th {
+  border: 1px solid #000000;
   padding: 4px 7px;
 }
 table.topazCells tbody td {
   font-size: 16px;
   font-weight: bold;
-  color: #ffffff;
-}
-table.topazCells tr:nth-child(even) {
-  background: #a43152;
+  color: #FFFFFF;
 }
 table.topazCells td:nth-child(even) {
-  background: #a43152;
+  background: #A43152;
 }
 table.topazCells tfoot td {
-  font-size: 16px;
+  font-size: 13px;
 }
 table.topazCells tfoot .links {
   text-align: right;
 }
-table.topazCells tfoot .links a {
+table.topazCells tfoot .links a{
   display: inline-block;
-  background: #ffffff;
-  color: #a43152;
+  background: #FFFFFF;
+  color: #A43152;
   padding: 2px 8px;
   border-radius: 5px;
 }
