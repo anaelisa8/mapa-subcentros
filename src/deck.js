@@ -42,7 +42,17 @@ function Deck() {
       pointRadiusMinPixels: 2,
       pointRadiusScale: 2000,
       getPointRadius: (f) => 11 - f.properties.scalerank,
-      getFillColor: [200, 0, 80, 180],
+      //getFillColor: [200, 0, 80, 180],
+      getFillColor: (f) => {
+        if (f.properties.LDA === 'Topic_0') return [153, 102, 102];
+        if (f.properties.LDA === 'Topic_2') return [153, 51, 102];
+        if (f.properties.LDA === 'Topic_4') return [153, 0, 102];
+        if (f.properties.LDA === 'Topic_5') return [200, 0, 80, 180];
+        if (f.properties.LDA === 'Topic_7') return [102, 51, 51];
+        if (f.properties.LDA === 'Topic_9') return [153, 51, 51];
+        if (f.properties.LDA === 'Topic_11') return [101, 0, 13];
+        if (f.properties.LDA === 'Topic_12') return [59, 0, 0];
+      }, 
       // Interactive props
       pickable: true,
       autoHighlight: true,
