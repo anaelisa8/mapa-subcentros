@@ -51,6 +51,44 @@ footer {
   padding: 30px;
 }
 
+#tdTop {
+  background-color: #555555;
+}
+
+#td0 {
+  background: rgb(153, 102, 102);
+}
+
+#td2 {
+  background: rgb(153, 51, 102);
+}
+
+#td4 {
+  background: rgb(153, 0, 102);
+}
+
+#td5 {
+  background: rgb(200, 0, 80, 180);
+}
+
+#td7 {
+  background: rgb(102, 51, 51);
+}
+
+#td9 {
+  background: rgb(153, 51, 51);
+}
+
+#td11 {
+  background: rgb(101, 0, 13);
+}
+
+#td12 {
+  background: rgb(59, 0, 0);
+}
+
+
+
 table.topazCells {
   border: 4px solid #000000;
   background-color: #555555;
