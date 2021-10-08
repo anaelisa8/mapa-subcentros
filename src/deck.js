@@ -53,6 +53,7 @@ function Deck() {
         if (f.properties.LDA === 'Topic_11') return [101, 0, 13];
         if (f.properties.LDA === 'Topic_12') return [59, 0, 0];
       }, 
+      opacity: 0.2,
       // Interactive props
       pickable: true,
       autoHighlight: true,
