@@ -15,7 +15,7 @@ const INITIAL_VIEW_STATE = {
   bearing: 0,
 };
 
-const MAP_STYLE = "mapbox://styles/mapbox/navigation-night-v1";
+const MAP_STYLE = "mapbox://styles/mapbox/dark-v10";
 const NAV_CONTROL_STYLE = {
   position: "absolute",
   top: 10,
