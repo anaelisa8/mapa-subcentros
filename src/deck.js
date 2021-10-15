@@ -5,7 +5,7 @@ import DeckGL, { GeoJsonLayer, ArcLayer } from "deck.gl";
 import subcentros from "./data/mn/subcentros.geojson";
 
 const MAPBOX_ACCESS_TOKEN =
-  "pk.eyJ1IjoibXNvZnR3YXJlIiwiYSI6ImNrbHJhenJmZTAzNWoydnE4eXM0eDJ2bnUifQ.83RA6TDbFviH45H-np33Bg";
+  "pk.eyJ1Ijoicm9wb25teCIsImEiOiItdHp3VXpRIn0.A2Qc9VwwnFuoUdIjuPVS5A";
 
 const INITIAL_VIEW_STATE = {
   longitude: -100.3152586,
@@ -15,7 +15,7 @@ const INITIAL_VIEW_STATE = {
   bearing: 0,
 };
 
-const MAP_STYLE = "mapbox://styles/mapbox/dark-v10";
+const MAP_STYLE = "mapbox://styles/roponmx/ckurkdr0m0fsc14mmn09vxy0f";
 const NAV_CONTROL_STYLE = {
   position: "absolute",
   top: 10,
