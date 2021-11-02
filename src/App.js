@@ -5,49 +5,37 @@ import Deck from "./deck";
 function App() {
   return (
     <div className="app">
-      <header className="app-header">
-        <h1>Mapa subcentros</h1>
-      </header>
       <div className="body">
         <Deck />
         <div id="foo">
           <table class="topazCells">
             <tbody>
               <tr>
-                <td>#</td>
-                <td id="tdTop">Tópico</td>
+                <td id="tdTop">Subcentros</td>
               </tr>
               <tr>
-                <td>Tópico 0:</td>
-                <td id="td0">Centro comercial e industrial</td>
+                <td id="td0">comercial e industrial</td>
               </tr>
               <tr>
-                <td>Tópico 2:</td>
-                <td id="td2">Centro financiero y comercial</td>
+                <td id="td2">financiero y comercial</td>
               </tr>
               <tr>
-                <td>Tópico 4:</td>
-                <td id="td4">Centro industrial y comercial</td>
+                <td id="td4">industrial y comercial</td>
               </tr>
               <tr>
-                <td>Tópico 5:</td>
-                <td id="td5">Centro de comercio al por menor</td>
+                <td id="td5">comercio al por menor</td>
               </tr>
               <tr>
-                <td>Tópico 7:</td>
-                <td id="td7">Centro de refracciones y gubernamental</td>
+                <td id="td7">refracciones y gubernamental</td>
               </tr>
               <tr>
-                <td>Tópico 9:</td>
-                <td id="td9">Centro industrial y de refracciones</td>
+                <td id="td9">industrial y de refracciones</td>
               </tr>
               <tr>
-                <td>Tópico 11:</td>
-                <td id="td11">Centro médico, educativo y financiero</td>
+                <td id="td11">médico, educativo y financiero</td>
               </tr>
               <tr>
-                <td>Tópico 12:</td>
-                <td id="td12">Centro comercial y educativo</td>
+                <td id="td12">comercial y educativo</td>
               </tr>
             </tbody>
           </table>

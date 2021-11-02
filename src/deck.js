@@ -5,7 +5,7 @@ import DeckGL, { GeoJsonLayer, ArcLayer } from "deck.gl";
 import subcentros from "./data/mn/subcentros.geojson";
 
 const MAPBOX_ACCESS_TOKEN =
-"pk.eyJ1Ijoicm9wb25teCIsImEiOiItdHp3VXpRIn0.A2Qc9VwwnFuoUdIjuPVS5A";
+  "pk.eyJ1Ijoicm9wb25teCIsImEiOiItdHp3VXpRIn0.A2Qc9VwwnFuoUdIjuPVS5A";
 
 //const MAPBOX_ACCESS_TOKEN =
 //"pk.eyJ1IjoiZmFiaWFubG96YW5vIiwiYSI6ImNrdXN2OHlqcjVqMjYycG1hbnNla281NGkifQ.z3NL0eixKxJtldk5kOmXTg";
@@ -48,16 +48,16 @@ function Deck() {
       getPointRadius: (f) => 11 - f.properties.scalerank,
       //getFillColor: [200, 0, 80, 180],
       getFillColor: (f) => {
-        if (f.properties.LDA === 'Topic_0') return [153, 102, 102];
-        if (f.properties.LDA === 'Topic_2') return [153, 51, 102];
-        if (f.properties.LDA === 'Topic_4') return [153, 0, 102];
-        if (f.properties.LDA === 'Topic_5') return [200, 0, 80, 180];
-        if (f.properties.LDA === 'Topic_7') return [102, 51, 51];
-        if (f.properties.LDA === 'Topic_9') return [153, 51, 51];
-        if (f.properties.LDA === 'Topic_11') return [101, 0, 13];
-        if (f.properties.LDA === 'Topic_12') return [59, 0, 0];
-      }, 
-      opacity: 0.2,
+        if (f.properties.LDA === "Topic_0") return [29, 92, 57];
+        if (f.properties.LDA === "Topic_2") return [225, 231, 102];
+        if (f.properties.LDA === "Topic_4") return [11, 84, 139];
+        if (f.properties.LDA === "Topic_5") return [152, 229, 216];
+        if (f.properties.LDA === "Topic_7") return [192, 21, 162];
+        if (f.properties.LDA === "Topic_9") return [0, 151, 205];
+        if (f.properties.LDA === "Topic_11") return [244, 49, 62];
+        if (f.properties.LDA === "Topic_12") return [253, 130, 4];
+      },
+      opacity: 0.3,
       // Interactive props
       pickable: true,
       autoHighlight: true,
