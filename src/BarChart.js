@@ -1,7 +1,7 @@
 import React from 'react'
 import { ResponsiveBar } from '@nivo/bar'
 
-const colors = { 'TOPIC_0': '#007cc2', 'TOPIC_2': '#02a859', 'TOPIC_4':'#fecb00','TOPIC_5': '#782823', 'TOPIC_7':'#e30100','TOPIC_9':'#ff9d00', 'TOPIC_11':'#6300c7', 'TOPIC_12':'#606666'}
+const colors = { 'TOPIC_0': '#1d5c39', 'TOPIC_2': '#e1e766', 'TOPIC_4':'#0b548b','TOPIC_5': '#98e5d8', 'TOPIC_7':'#c015a2','TOPIC_9':'#0097cd', 'TOPIC_11':'#f4313e', 'TOPIC_12':'#fd8204'}
 const getColor = bar => colors[bar.id]
 
 /*const data = [
