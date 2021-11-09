@@ -290,7 +290,6 @@ const setUpData = (id) => {
 
     });
   }, []);
-
   return (
     <div className="district-map-wrapper">
       <div className="info">
@@ -299,7 +298,7 @@ const setUpData = (id) => {
       <div id="districtDetailMap" className="map">
         <div style={{ height: "100%", width: "100%"}} ref={mapContainer}></div>
       </div>
-      <div style = {{width:"200vw"}}>
+      <div style = {{height:"500px", width:"1000px", zindex: "5"}}>
       {districtData.length !== 0 && (
           <Chart data={districtData}/>
           )}
