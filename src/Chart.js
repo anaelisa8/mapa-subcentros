@@ -158,7 +158,7 @@ const Chart = ({data}) => (
     />
 );
 
-export default Chart;
+export default PieChart;
 
 /*export default function App() {
     return (
