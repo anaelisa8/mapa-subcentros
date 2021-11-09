@@ -1,12 +1,13 @@
 import React from "react";
 import Districts from "./Districts";
 import Deck from "./deck";
+import Chart from './BarChart';
 
 function App() {
   return (
     <div className="app">
       <div className="body">
-        <Deck />
+        <Districts />
         <div id="foo">
           <table class="topazCells">
             <tbody>
