@@ -92,7 +92,7 @@ const Chart = ({data}) => {
             tickSize: 5,
             tickPadding: 5,
             tickRotation: 0,
-            legend: 'TOPICOS',
+            legend: 'TÓPICOS',
             legendPosition: 'middle',
             legendOffset: 32
         }}
@@ -100,7 +100,7 @@ const Chart = ({data}) => {
             tickSize: 5,
             tickPadding: 5,
             tickRotation: 0,
-            legend: 'NUMERO',
+            legend: 'NÚMERO',
             legendPosition: 'middle',
             legendOffset: -40
         }}

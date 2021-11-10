@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="app">
       <div className="body">
-        <Districts />
+        <Districts/>
         <div id="foo">
           <table class="topazCells">
             <tbody>

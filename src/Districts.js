@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import subcentros from "./data/mn/subcentros.geojson";
+import subcentros_csv from "./data/mn/subcentros_csv2.csv";
 import mapboxgl from "mapbox-gl";
 import Chart from './BarChart';
+import * as d3 from 'd3';
 
 const Districts = ({ classes }) => {
 //function Districts(props) {
@@ -23,7 +25,7 @@ const [zoom, setZoom] = useState(12);
 const [districtData, setDistrictData] = useState([])
 const [gobData, setGobData] = useState([])
 //const [selectedDistrictName, setSelectedDistrictName] = useState(data[0].name)
-const [selectedDistrict, setSelectedDistrict] = useState(40)
+const [selectedDistrict, setSelectedDistrict] = useState(1)
 //const [selectedDistrict, _setSelectedDistrict] = useState(null)
 const [hoveredDistrict, _setHoveredDistrict] = useState(null);
 const hoveredDistrictRef = useRef(hoveredDistrict);
@@ -68,15 +70,158 @@ var setSelectedDistrictN = data => {
     _setSelectedDistrictN(data);
 };
 
-const setupGeoJson = () => {
+/*const setupGeoJson = () => {
     console.log(subcentros)
+}*/
+
+var loadFiles = [
+  d3.json(subcentros),
+  d3.csv(subcentros_csv)
+];
+
+//DATOS PIECHART
+/*
+const setUpData = (id) => {
+  let _districtData = []
+  mergedGeoJSON.features.map(feature =>{
+    if(feature.properties.id == id){
+      if(feature.properties.TOPIC_0 >= 0){
+      _districtData.push({
+        "id": "TOPIC_0",
+        "label": "TOPIC_0",
+        "value": feature.properties.TOPIC_0,
+        "color": "hsl(8, 76%, 43%)"
+      })
+    }
+    if(feature.properties.TOPIC_2 >= 0){
+      _districtData.push({
+        "id": "TOPIC_2",
+        "label": "TOPIC_2",
+        "value": feature.properties.TOPIC_2,
+        "color": "hsl(8, 76%, 43%)"
+      })
+    }
+    if(feature.properties.TOPIC_4 >= 0){
+      _districtData.push({
+        "id": "TOPIC_4",
+        "label": "TOPIC_4",
+        "value": feature.properties.TOPIC_4,
+        "color": "hsl(8, 76%, 43%)"
+      })
+    }
+    if(feature.properties.TOPIC_5 >= 0){
+      _districtData.push({
+        "id": "TOPIC_5",
+        "label": "TOPIC_5",
+        "value": feature.properties.TOPIC_5,
+        "color": "hsl(8, 76%, 43%)"
+      })
+    }
+    if(feature.properties.TOPIC_7 >= 0){
+      _districtData.push({
+        "id": "TOPIC_7",
+        "label": "TOPIC_7",
+        "value": feature.properties.TOPIC_7,
+        "color": "hsl(8, 76%, 43%)"
+      })
+    }
+    if(feature.properties.TOPIC_9 >= 0){
+      _districtData.push({
+        "id": "TOPIC_9",
+        "label": "TOPIC_9",
+        "value": feature.properties.TOPIC_9,
+        "color": "hsl(8, 76%, 43%)"
+      })
+    }
+    if(feature.properties.TOPIC_11 >= 0){
+      _districtData.push({
+        "id": "TOPIC_11",
+        "label": "TOPIC_11",
+        "value": feature.properties.TOPIC_11,
+        "color": "hsl(8, 76%, 43%)"
+      })
+    }
+    if(feature.properties.TOPIC_12 >= 0){
+      _districtData.push({
+        "id": "TOPIC_12",
+        "label": "TOPIC_12",
+        "value": feature.properties.TOPIC_12,
+        "color": "hsl(8, 76%, 43%)"
+      })
+    }
+    }
+  })
+  //console.log(_districtData)
+  setDistrictData(_districtData)
+}
+*/
+//DATOS BARCHAR
+const setUpData = (id) => {
+  let _districtData = []
+  mergedGeoJSON.features.map(feature =>{
+  if(feature.properties.lbls == id){
+    if(feature.properties.TOPIC_0 >= 0){
+      _districtData.push({
+        "TOPICO": "TOPIC_0",
+        "TOPIC_0": feature.properties.TOPIC_0,
+      })
+    }
+    if(feature.properties.TOPIC_2 >= 0){
+      _districtData.push({
+        "TOPICO": "TOPIC_2",
+        "TOPIC_2": feature.properties.TOPIC_2,
+      })
+    }
+    if(feature.properties.TOPIC_4 >= 0){
+      _districtData.push({
+        "TOPICO": "TOPIC_4",
+        "TOPIC_4": feature.properties.TOPIC_4,
+      })
+    }
+    if(feature.properties.TOPIC_5 >= 0){
+      _districtData.push({
+        "TOPICO": "TOPIC_5",
+        "TOPIC_5": feature.properties.TOPIC_5,
+      })
+    }
+    if(feature.properties.TOPIC_7 >= 0){
+      _districtData.push({
+        "TOPICO": "TOPIC_7",
+        "TOPIC_7": feature.properties.TOPIC_7,
+      })
+    }
+    if(feature.properties.TOPIC_9 >= 0){
+      _districtData.push({
+        "TOPICO": "TOPIC_9",
+        "TOPIC_9": feature.properties.TOPIC_9,
+      })
+    }
+    if(feature.properties.TOPIC_11 >= 0){
+      _districtData.push({
+        "TOPICO": "TOPIC_11",
+        "TOPIC_11": feature.properties.TOPIC_11,
+      })
+    }
+    if(feature.properties.TOPIC_12 >= 0){
+      _districtData.push({
+        "TOPICO": "TOPIC_12",
+        "TOPIC_12": feature.properties.TOPIC_12,
+      })
+    }
+    }
+  })
+  //console.log(_districtData)
+  setDistrictData(_districtData)
 }
 
+/*
+//DATOS RANDOM BARCHART
 const setUpData = (id) => {
+  // console.debug(id)
   let _districtData = []
   _districtData.push({
     "TOPICO": "TOPIC_0",
-    "TOPIC_0": Math.floor((Math.random()*10)+1),
+    "TOPIC_0": Math.floor((Math.random()*10)+1), // array[id].topic_0
     //"hot dogColor": "hsl(151, 97, 33)"
   })
   _districtData.push({
@@ -116,9 +261,10 @@ const setUpData = (id) => {
   })
  console.log(_districtData)
  setDistrictData(_districtData)
-}
+}*/
 
-//PIE CHART
+
+//PIE CHART RANDOM
   /*const setUpData = (id) => {
     let _districtData = []
     _districtData.push({
@@ -156,8 +302,8 @@ const setUpData = (id) => {
   }*/
 
   useEffect(() => {
-    setupGeoJson()
-    setUpData(selectedDistrict)
+    //setupGeoJson()
+    //setUpData(selectedDistrict)
 
     let map = new mapboxgl.Map({
       container: mapContainer.current,
@@ -166,6 +312,28 @@ const setUpData = (id) => {
       center: [long, lat],
       zoom: zoom,
     });
+
+    Promise.all(loadFiles).then(function (data) {
+
+      data[0].features = data[0].features.map(feature => {
+        data[1].forEach(prefData => {
+            if (feature.properties.id === prefData['id']) {
+                feature.properties.TOPIC_0 = Number(prefData['TOPIC_0']);
+                feature.properties.TOPIC_2 = Number(prefData['TOPIC_2']);
+                feature.properties.TOPIC_4 = Number(prefData['TOPIC_4']);
+                feature.properties.TOPIC_5 = Number(prefData['TOPIC_5']);
+                feature.properties.TOPIC_7 = Number(prefData['TOPIC_7']);
+                feature.properties.TOPIC_9 = Number(prefData['TOPIC_9']);
+                feature.properties.TOPIC_11= Number(prefData['TOPIC_11']);
+                feature.properties.TOPIC_12 = Number(prefData['TOPIC_12']);
+                feature.properties.TOPICO = String(prefData['TOPICO']);
+            }
+        });
+        return feature;
+    });
+      mergedGeoJSON = data[0];
+
+      setUpData(selectedDistrict)
 
     // Add zoom and rotation controls to the map.
     map.addControl(new mapboxgl.NavigationControl());
@@ -211,6 +379,12 @@ const setUpData = (id) => {
           ],
         },
       });
+      
+      var popup = new mapboxgl.Popup({
+        closeButton: false,
+        closeOnClick: false,
+        className: 'myPopup'
+    });
 
       map.on('mousemove', 'district-layer', function (e) {
         //map.getCanvas().style.cursor = 'pointer';
@@ -226,6 +400,11 @@ const setUpData = (id) => {
           let _hoveredDistrict = e.features[0].id;
           let _hoveredMunN = e.features[0].properties.lbls;
           let _hoveredMunP = e.features[0].properties.LDA;
+
+          var content = "<b>" + "Detalles Subcentro" + "</b>" + "<br>";
+          content += "lbls: " + _hoveredMunN  + "<br>";
+          content += "Topico: " + _hoveredMunP + "<br>";
+          popup.setLngLat(e.lngLat).setHTML(content).addTo(map);
 
           map.setFeatureState(
             { source: "district-source", id: _hoveredDistrict, name: _hoveredMunN },
@@ -273,6 +452,11 @@ const setUpData = (id) => {
         let _selectedDistrict = e.features[0].properties.lbls;
         let _selectedDistrictN = e.features[0].properties.lbls;
         let _selectedDistrictP = e.features[0].properties.LDA;
+
+        var content = "<b>" + "Detalles Subcentro" + "</b>" + "<br>";
+            content += "lbls: " + _selectedDistrictN  + "<br>";
+            content += "Topico: " + _selectedDistrictP + "<br>";
+            popup.setLngLat(e.lngLat).setHTML(content).addTo(map);
   
         map.setFeatureState(
           { source: 'district-source', id: _selectedDistrict, name: _selectedDistrictN},
@@ -280,6 +464,7 @@ const setUpData = (id) => {
       );
       
       setUpData(_selectedDistrict);
+
       //setUpDatos(_selectedDistrict);
       setSelectedDistrict(_selectedDistrict);
       setSelectedDistrictN(_selectedDistrictN);
@@ -289,11 +474,12 @@ const setUpData = (id) => {
 
 
     });
+  });
   }, []);
   return (
     <div className="district-map-wrapper">
       <div className="info">
-        lbls:{selectedDistrictN}
+        {/*lbls:{selectedDistrictN}*/}
       </div>
       <div id="districtDetailMap" className="map">
         <div style={{ height: "100%", width: "100%"}} ref={mapContainer}></div>
