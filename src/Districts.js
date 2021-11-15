@@ -401,9 +401,9 @@ const setUpData = (id) => {
           let _hoveredMunN = e.features[0].properties.lbls;
           let _hoveredMunP = e.features[0].properties.LDA;
 
-          var content = "<b>" + "Detalles Subcentro" + "</b>" + "<br>";
+          var content = "<b>" + "Subcentro Urbano" + "</b>" + "<br>";
           content += "lbls: " + _hoveredMunN  + "<br>";
-          content += "Topico: " + _hoveredMunP + "<br>";
+          content += "Subcentro predominante: " + _hoveredMunP + "<br>";
           popup.setLngLat(e.lngLat).setHTML(content).addTo(map);
 
           map.setFeatureState(
@@ -453,9 +453,9 @@ const setUpData = (id) => {
         let _selectedDistrictN = e.features[0].properties.lbls;
         let _selectedDistrictP = e.features[0].properties.LDA;
 
-        var content = "<b>" + "Detalles Subcentro" + "</b>" + "<br>";
+        var content = "<b>" + "Subcentro Urbano" + "</b>" + "<br>";
             content += "lbls: " + _selectedDistrictN  + "<br>";
-            content += "Topico: " + _selectedDistrictP + "<br>";
+            content += "Subcentro predominante: " + _selectedDistrictP + "<br>";
             popup.setLngLat(e.lngLat).setHTML(content).addTo(map);
   
         map.setFeatureState(

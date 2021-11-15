@@ -3,41 +3,7 @@ import { ResponsiveBar } from '@nivo/bar'
 
 const colors = { 'TOPIC_0': '#1d5c39', 'TOPIC_2': '#e1e766', 'TOPIC_4':'#0b548b','TOPIC_5': '#98e5d8', 'TOPIC_7':'#c015a2','TOPIC_9':'#0097cd', 'TOPIC_11':'#f4313e', 'TOPIC_12':'#fd8204'}
 const getColor = bar => colors[bar.id]
-
-/*const data = [
-    {
-        "TOPICO": "TOPIC_0",
-        "TOPIC_0": 2,
-    },
-    {
-        "TOPICO": "TOPIC_2",
-        "TOPIC_2": 2,
-    },
-    {
-        "TOPICO": "TOPIC_4",
-        "TOPIC_4": 2,
-    },
-    {
-        "TOPICO": "TOPIC_5",
-        "TOPIC_5": 2,
-    },
-    {
-        "TOPICO": "TOPIC_7",
-        "TOPIC_7": 2,
-    },
-    {
-        "TOPICO": "TOPIC_9",
-        "TOPIC_9": 2,
-    },
-    {
-        "TOPICO": "TOPIC_11",
-        "TOPIC_11": 2,
-    },
-    {
-        "TOPICO": "TOPIC_12",
-        "TOPIC_12": 2,
-    },
-]*/
+const format = v => `${v}%`
 
 const Chart = ({data}) => {
     return (
@@ -50,7 +16,8 @@ const Chart = ({data}) => {
         valueScale={{ type: 'linear' }}
         indexScale={{ type: 'band', round: true }}
         colors={getColor}
-        //colors={{ scheme: 'nivo' }}
+        labelFormat={format}
+        tooltipFormat={format}
         defs={[
             {
                 id: 'dots',
@@ -92,7 +59,7 @@ const Chart = ({data}) => {
             tickSize: 5,
             tickPadding: 5,
             tickRotation: 0,
-            legend: 'TÓPICOS',
+            legend: 'Tipo de subcentro',
             legendPosition: 'middle',
             legendOffset: 32
         }}
@@ -100,13 +67,14 @@ const Chart = ({data}) => {
             tickSize: 5,
             tickPadding: 5,
             tickRotation: 0,
-            legend: 'NÚMERO',
+            legend: 'Porcentaje empleos pertenecientes a cada tipo',
             legendPosition: 'middle',
-            legendOffset: -40
+            legendOffset: -40,
+            format
         }}
         labelSkipWidth={12}
         labelSkipHeight={12}
-        labelTextColor={{ from: 'color', modifiers: [ [ 'darker', 1.6 ] ] }}
+        labelTextColor="black"
         legends={[
             {
                 dataFrom: 'keys',
