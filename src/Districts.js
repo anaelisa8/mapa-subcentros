@@ -166,6 +166,12 @@ const setUpData = (id) => {
         "TOPIC_0": feature.properties.TOPIC_0,
       })
     }
+    if(feature.properties.TOPIC_1 >= 0){
+      _districtData.push({
+        "TOPICO": "TOPIC_1",
+        "TOPIC_1": feature.properties.TOPIC_1,
+      })
+    }
     if(feature.properties.TOPIC_2 >= 0){
       _districtData.push({
         "TOPICO": "TOPIC_2",
@@ -355,6 +361,8 @@ const setUpData = (id) => {
             ["get", "LDA"],
             "Topic_0",
             "#1d5c39",
+            "Topic_1",
+            "#FFDC00",
             "Topic_2",
             "#e1e766",
             "Topic_4",
@@ -402,7 +410,7 @@ const setUpData = (id) => {
           let _hoveredMunP = e.features[0].properties.LDA;
 
           var content = "<b>" + "Subcentro Urbano" + "</b>" + "<br>";
-          content += "lbls: " + _hoveredMunN  + "<br>";
+          content += "Nº de empleos: " + _hoveredMunN  + "<br>";
           content += "Subcentro predominante: " + _hoveredMunP + "<br>";
           popup.setLngLat(e.lngLat).setHTML(content).addTo(map);
 
@@ -454,7 +462,7 @@ const setUpData = (id) => {
         let _selectedDistrictP = e.features[0].properties.LDA;
 
         var content = "<b>" + "Subcentro Urbano" + "</b>" + "<br>";
-            content += "lbls: " + _selectedDistrictN  + "<br>";
+            content += "Nº de empleos: " + _selectedDistrictN  + "<br>";
             content += "Subcentro predominante: " + _selectedDistrictP + "<br>";
             popup.setLngLat(e.lngLat).setHTML(content).addTo(map);
   

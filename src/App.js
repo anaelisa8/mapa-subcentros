@@ -12,31 +12,34 @@ function App() {
           <table class="topazCells">
             <tbody>
               <tr>
-                <td id="tdTop">Subcentros</td>
+                <td id="tdTop">Tipología de Subcentros</td>
               </tr>
               <tr>
-                <td id="td0">comercial e industrial</td>
+                <td id="td0">Tipo 0: Enfoque adicional en mantenimiento, servicios educativos y ferreterías</td>
               </tr>
               <tr>
-                <td id="td2">financiero y comercial</td>
+                <td id="td1">Tipo 1: Enfoque adicional en servicios profesionales y esparcimiento</td>
               </tr>
               <tr>
-                <td id="td4">industrial y comercial</td>
+                <td id="td2">Tipo 2: Actividades financieras</td>
               </tr>
               <tr>
-                <td id="td5">comercio al por menor</td>
+                <td id="td4">Tipo 4: Reparación y mantenimiento de equipo y maquinaría</td>
               </tr>
               <tr>
-                <td id="td7">refracciones y gubernamental</td>
+                <td id="td5">Tipo 5: Enfoque adicional en tiendas de ropa, calzado, esparcimiento</td>
               </tr>
               <tr>
-                <td id="td9">industrial y de refracciones</td>
+                <td id="td7">Tipo 7: Taller y refacciones para el sector automotriz</td>
               </tr>
               <tr>
-                <td id="td11">médico, educativo y financiero</td>
+                <td id="td9">Tipo 9: Reparación y mantenimiento. Actividades áreas agropecuarias y forestales</td>
               </tr>
               <tr>
-                <td id="td12">comercial y educativo</td>
+                <td id="td11">Tipo 11: Servicios médicos y actividad científica</td>
+              </tr>
+              <tr>
+                <td id="td12">Tipo 12: Enfoque en ropa y calzado, esparcimeinto y servicios profesionales</td>
               </tr>
             </tbody>
           </table>

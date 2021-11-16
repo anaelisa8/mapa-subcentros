@@ -60,6 +60,10 @@ footer {
   background: rgb(29, 92, 57, 0.65);
 }
 
+#td1 {
+  background: rgb(255, 220, 0,0.65);
+}
+
 #td2 {
   background: rgb(225, 231, 102, 0.65);
 }
@@ -92,7 +96,7 @@ table.topazCells {
   border: 4px solid #000000;
   background-color: #9b9b9b;
   width: 400px;
-  text-align: center;
+  text-align: left;
   border-collapse: collapse;
   text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }

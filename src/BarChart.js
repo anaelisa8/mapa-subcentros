@@ -1,7 +1,7 @@
 import React from 'react'
 import { ResponsiveBar } from '@nivo/bar'
 
-const colors = { 'TOPIC_0': '#1d5c39', 'TOPIC_2': '#e1e766', 'TOPIC_4':'#0b548b','TOPIC_5': '#98e5d8', 'TOPIC_7':'#c015a2','TOPIC_9':'#0097cd', 'TOPIC_11':'#f4313e', 'TOPIC_12':'#fd8204'}
+const colors = { 'TOPIC_0': '#1d5c39','TOPIC_1': "#FFDC00",'TOPIC_2': '#e1e766', 'TOPIC_4':'#0b548b','TOPIC_5': '#98e5d8', 'TOPIC_7':'#c015a2','TOPIC_9':'#0097cd', 'TOPIC_11':'#f4313e', 'TOPIC_12':'#fd8204'}
 const getColor = bar => colors[bar.id]
 const format = v => `${v}%`
 
@@ -9,7 +9,7 @@ const Chart = ({data}) => {
     return (
         <ResponsiveBar
         data={data}
-        keys={[ 'TOPIC_0', 'TOPIC_2', 'TOPIC_4', 'TOPIC_5', 'TOPIC_7', 'TOPIC_9', 'TOPIC_11', 'TOPIC_12']}
+        keys={[ 'TOPIC_0', 'TOPIC_1','TOPIC_2', 'TOPIC_4', 'TOPIC_5', 'TOPIC_7', 'TOPIC_9', 'TOPIC_11', 'TOPIC_12']}
         indexBy= "TOPICO"
         margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
         padding={0.3}
@@ -61,7 +61,7 @@ const Chart = ({data}) => {
             tickRotation: 0,
             legend: 'Tipo de subcentro',
             legendPosition: 'middle',
-            legendOffset: 32
+            legendOffset: 40
         }}
         axisLeft={{
             tickSize: 5,
@@ -69,7 +69,7 @@ const Chart = ({data}) => {
             tickRotation: 0,
             legend: 'Porcentaje empleos pertenecientes a cada tipo',
             legendPosition: 'middle',
-            legendOffset: -40,
+            legendOffset: -50,
             format
         }}
         labelSkipWidth={12}
@@ -102,6 +102,21 @@ const Chart = ({data}) => {
         animate={true}
         motionStiffness={90}
         motionDamping={15}
+        tooltip={({ id, value, color }) => (
+            <div
+                style={{
+                    padding: 12,
+                    color,
+                    background: 'white',
+                }}
+            >
+                {/*<span>Look, I'm custom :)</span>*/}
+                {/*<br />*/}
+                <strong>
+                    {id}: {value}%
+                </strong>
+            </div>
+        )}
     />
 )}
 
