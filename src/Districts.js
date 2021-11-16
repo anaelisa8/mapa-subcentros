@@ -491,7 +491,7 @@ const setUpData = (id) => {
         {/*lbls:{selectedDistrictN}*/}
       </div>
       <div id="districtDetailMap" className={classes.map}>
-        <div style={{ height: "100%"}} ref={mapContainer}></div>
+        <div style={{ height: "100vh", width: "100vw"}} ref={mapContainer}></div>
 
       <div className={classes.chartContainer}>
       {districtData.length !== 0 && (
@@ -512,7 +512,8 @@ const styles = () => ({
     height: '400px',
     width: '600px',
     position: 'relative',
-    top: '-430px',
+    top: '-500px',
+    margin: '30px',
     background: "white",
     //opacity: 0.8
   },
