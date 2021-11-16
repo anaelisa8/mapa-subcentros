@@ -4,6 +4,7 @@ import subcentros_csv from "./data/mn/subcentros_csv2.csv";
 import mapboxgl from "mapbox-gl";
 import Chart from './BarChart';
 import * as d3 from 'd3';
+import { withStyles } from '@material-ui/core/styles';
 
 const Districts = ({ classes }) => {
 //function Districts(props) {
@@ -162,56 +163,56 @@ const setUpData = (id) => {
   if(feature.properties.lbls == id){
     if(feature.properties.TOPIC_0 >= 0){
       _districtData.push({
-        "TOPICO": "TOPIC_0",
-        "TOPIC_0": feature.properties.TOPIC_0,
+        "TOPICO": "Tipo 1",
+        "Tipo 1": feature.properties.TOPIC_0,
       })
     }
     if(feature.properties.TOPIC_1 >= 0){
       _districtData.push({
-        "TOPICO": "TOPIC_1",
-        "TOPIC_1": feature.properties.TOPIC_1,
+        "TOPICO": "Tipo 2",
+        "Tipo 2": feature.properties.TOPIC_1,
       })
     }
     if(feature.properties.TOPIC_2 >= 0){
       _districtData.push({
-        "TOPICO": "TOPIC_2",
-        "TOPIC_2": feature.properties.TOPIC_2,
+        "TOPICO": "Tipo 3",
+        "Tipo 3": feature.properties.TOPIC_2,
       })
     }
     if(feature.properties.TOPIC_4 >= 0){
       _districtData.push({
-        "TOPICO": "TOPIC_4",
-        "TOPIC_4": feature.properties.TOPIC_4,
+        "TOPICO": "Tipo 4",
+        "Tipo 4": feature.properties.TOPIC_4,
       })
     }
     if(feature.properties.TOPIC_5 >= 0){
       _districtData.push({
-        "TOPICO": "TOPIC_5",
-        "TOPIC_5": feature.properties.TOPIC_5,
+        "TOPICO": "Tipo 5",
+        "Tipo 5": feature.properties.TOPIC_5,
       })
     }
     if(feature.properties.TOPIC_7 >= 0){
       _districtData.push({
-        "TOPICO": "TOPIC_7",
-        "TOPIC_7": feature.properties.TOPIC_7,
+        "TOPICO": "Tipo 6",
+        "Tipo 6": feature.properties.TOPIC_7,
       })
     }
     if(feature.properties.TOPIC_9 >= 0){
       _districtData.push({
-        "TOPICO": "TOPIC_9",
-        "TOPIC_9": feature.properties.TOPIC_9,
+        "TOPICO": "Tipo 7",
+        "Tipo 7": feature.properties.TOPIC_9,
       })
     }
     if(feature.properties.TOPIC_11 >= 0){
       _districtData.push({
-        "TOPICO": "TOPIC_11",
-        "TOPIC_11": feature.properties.TOPIC_11,
+        "TOPICO": "Tipo 8",
+        "Tipo 8": feature.properties.TOPIC_11,
       })
     }
     if(feature.properties.TOPIC_12 >= 0){
       _districtData.push({
-        "TOPICO": "TOPIC_12",
-        "TOPIC_12": feature.properties.TOPIC_12,
+        "TOPICO": "Tipo 9",
+        "Tipo 9": feature.properties.TOPIC_12,
       })
     }
     }
@@ -407,11 +408,11 @@ const setUpData = (id) => {
 
           let _hoveredDistrict = e.features[0].id;
           let _hoveredMunN = e.features[0].properties.lbls;
-          let _hoveredMunP = e.features[0].properties.LDA;
+          let _hoveredMunP = e.features[0].properties.Descripcion;
 
           var content = "<b>" + "Subcentro Urbano" + "</b>" + "<br>";
-          content += "Nº de empleos: " + _hoveredMunN  + "<br>";
-          content += "Subcentro predominante: " + _hoveredMunP + "<br>";
+          content += "<u>" + "Nº de empleos: " + "</u>" + _hoveredMunN  + "<br>";
+          content += "<u>" + "Subcentro predominante: " + "</u>" + _hoveredMunP + "<br>";
           popup.setLngLat(e.lngLat).setHTML(content).addTo(map);
 
           map.setFeatureState(
@@ -459,11 +460,11 @@ const setUpData = (id) => {
 
         let _selectedDistrict = e.features[0].properties.lbls;
         let _selectedDistrictN = e.features[0].properties.lbls;
-        let _selectedDistrictP = e.features[0].properties.LDA;
+        let _selectedDistrictP = e.features[0].properties.Descripcion;
 
         var content = "<b>" + "Subcentro Urbano" + "</b>" + "<br>";
-            content += "Nº de empleos: " + _selectedDistrictN  + "<br>";
-            content += "Subcentro predominante: " + _selectedDistrictP + "<br>";
+            content += "<u>" + "Nº de empleos: " + "</u>" + _selectedDistrictN  + "<br>";
+            content += "<u>"+ "Subcentro predominante: " + "</u>" + _selectedDistrictP + "<br>";
             popup.setLngLat(e.lngLat).setHTML(content).addTo(map);
   
         map.setFeatureState(
@@ -489,16 +490,34 @@ const setUpData = (id) => {
       <div className="info">
         {/*lbls:{selectedDistrictN}*/}
       </div>
-      <div id="districtDetailMap" className="map">
-        <div style={{ height: "100%", width: "100%"}} ref={mapContainer}></div>
-      </div>
-      <div style = {{height:"500px", width:"1000px", zindex: "5"}}>
+      <div id="districtDetailMap" className={classes.map}>
+        <div style={{ height: "100%"}} ref={mapContainer}></div>
+
+      <div className={classes.chartContainer}>
       {districtData.length !== 0 && (
           <Chart data={districtData}/>
           )}
+      </div>
       </div>
     </div>
   );
 }
 
-export default Districts;
+const styles = () => ({
+  map: {
+    height: '800px',
+    width: '99vw',
+  },
+  chartContainer: {
+    height: '400px',
+    width: '600px',
+    position: 'relative',
+    top: '-430px',
+    background: "white",
+    //opacity: 0.8
+  },
+});
+
+//style = {{height:"500px", width:"1000px", zindex: "5"}}
+
+export default withStyles(styles)(Districts);

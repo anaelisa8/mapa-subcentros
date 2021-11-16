@@ -1,15 +1,40 @@
 import React from 'react'
 import { ResponsiveBar } from '@nivo/bar'
 
-const colors = { 'TOPIC_0': '#1d5c39','TOPIC_1': "#FFDC00",'TOPIC_2': '#e1e766', 'TOPIC_4':'#0b548b','TOPIC_5': '#98e5d8', 'TOPIC_7':'#c015a2','TOPIC_9':'#0097cd', 'TOPIC_11':'#f4313e', 'TOPIC_12':'#fd8204'}
+const colors = { 'Tipo 1': '#1d5c39','Tipo 2': "#FFDC00",'Tipo 3': '#e1e766', 'Tipo 4':'#0b548b','Tipo 5': '#98e5d8', 'Tipo 6':'#c015a2','Tipo 7':'#0097cd', 'Tipo 8':'#f4313e', 'Tipo 9':'#fd8204'}
 const getColor = bar => colors[bar.id]
 const format = v => `${v}%`
+const theme = {
+    //background: "#222222",
+    axis: {
+      fontSize: "14px",
+      tickColor: "#eee",
+      ticks: {
+        line: {
+          stroke: "#555555"
+        },
+        text: {
+          fill: "#black"
+        }
+      },
+      legend: {
+        text: {
+          fill: "black"
+        }
+      }
+    },
+    grid: {
+      line: {
+        stroke: "#555555"
+      }
+    }
+  };
 
 const Chart = ({data}) => {
     return (
         <ResponsiveBar
         data={data}
-        keys={[ 'TOPIC_0', 'TOPIC_1','TOPIC_2', 'TOPIC_4', 'TOPIC_5', 'TOPIC_7', 'TOPIC_9', 'TOPIC_11', 'TOPIC_12']}
+        keys={[ 'Tipo 1', 'Tipo 2','Tipo 3', 'Tipo 4', 'Tipo 5', 'Tipo 6', 'Tipo 7', 'Tipo 8', 'Tipo 9']}
         indexBy= "TOPICO"
         margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
         padding={0.3}
@@ -18,6 +43,7 @@ const Chart = ({data}) => {
         colors={getColor}
         labelFormat={format}
         tooltipFormat={format}
+        theme={theme}
         defs={[
             {
                 id: 'dots',
@@ -61,7 +87,7 @@ const Chart = ({data}) => {
             tickRotation: 0,
             legend: 'Tipo de subcentro',
             legendPosition: 'middle',
-            legendOffset: 40
+            legendOffset: 40,
         }}
         axisLeft={{
             tickSize: 5,
@@ -89,6 +115,7 @@ const Chart = ({data}) => {
                 itemDirection: 'left-to-right',
                 itemOpacity: 0.85,
                 symbolSize: 20,
+                itemTextColor:"black",
                 effects: [
                     {
                         on: 'hover',
