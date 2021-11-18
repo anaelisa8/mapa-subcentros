@@ -1,11 +1,11 @@
 import React from 'react'
 import { ResponsiveBar } from '@nivo/bar'
 
-const colors = { 'Tipo 1': 'rgb(29, 92, 57, 0.75)','Tipo 2': "rgb(255, 220, 0,0.75)",'Tipo 3': 'rgb(225, 231, 102, 0.75)', 'Tipo 4':'rgb(11, 84, 139)','Tipo 5': 'rgb(152, 229, 216)', 'Tipo 6':'rgb(192, 21, 162, 0.75)','Tipo 7':'rgb(0, 151, 205, 0.75)', 'Tipo 8':'rgb(244, 49, 62, 0.75)', 'Tipo 9':'rgb(253, 130, 4, 0.75)'}
+const colors = { 'Tipo 1': 'rgb(29, 92, 57, 0.75)','Tipo 2': "rgb(225, 231, 102,0.65)",'Tipo 3': 'rgb(240, 80, 151, 0.65)', 'Tipo 4':'rgb(11, 84, 139)','Tipo 5': 'rgb(152, 229, 216)', 'Tipo 6':'rgb(112, 34, 118, 0.65)','Tipo 7':'rgb(0, 151, 205, 0.75)', 'Tipo 8':'rgb(244, 49, 62, 0.75)', 'Tipo 9':'rgb(253, 130, 4, 0.75)'}
 const getColor = bar => colors[bar.id]
 const format = v => `${v}%`
 const theme = {
-    background: "#E7E7E7",
+    background: "#FFFFFF",
     //opacity: 0.8,
     axis: {
       fontSize: "14px",
@@ -35,7 +35,7 @@ const Chart = ({data}) => {
     return (
         <ResponsiveBar
         data={data}
-        keys={[ 'Tipo 1', 'Tipo 2','Tipo 3', 'Tipo 4', 'Tipo 5', 'Tipo 6', 'Tipo 7', 'Tipo 8', 'Tipo 9']}
+        keys={[ 'Tipo 9', 'Tipo 8','Tipo 7', 'Tipo 6', 'Tipo 5', 'Tipo 4', 'Tipo 3', 'Tipo 2', 'Tipo 1']}
         indexBy= "TOPICO"
         margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
         padding={0.3}

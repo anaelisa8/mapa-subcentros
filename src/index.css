@@ -57,15 +57,15 @@ footer {
 }
 
 #td0 {
-  background: rgb(29, 92, 57, 0.65);
+  background: rgb(29, 92, 57, 0.75);
 }
 
 #td1 {
-  background: rgb(255, 220, 0,0.65);
+  background: rgb(225, 231, 102,0.65);
 }
 
 #td2 {
-  background: rgb(225, 231, 102, 0.65);
+  background: rgb(240, 80, 151, 0.65);
 }
 
 #td4 {
@@ -77,7 +77,7 @@ footer {
 }
 
 #td7 {
-  background: rgb(192, 21, 162, 0.65);
+  background: rgb(112, 34, 118, 0.65);
 }
 
 #td9 {
