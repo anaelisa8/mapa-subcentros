@@ -523,7 +523,7 @@ const styles = () => ({
     flex: 1, 
     top: '-500px',
     position: 'relative',
-    background: "#FFFFFF",
+    background: "#E7E7E7",
     opacity: 0.8
   },
   districtTitle: {

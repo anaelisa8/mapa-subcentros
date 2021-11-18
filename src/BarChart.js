@@ -5,7 +5,7 @@ const colors = { 'Tipo 1': 'rgb(29, 92, 57, 0.75)','Tipo 2': "rgb(225, 231, 102,
 const getColor = bar => colors[bar.id]
 const format = v => `${v}%`
 const theme = {
-    background: "#FFFFFF",
+    background: "#E7E7E7",
     //opacity: 0.8,
     axis: {
       fontSize: "14px",
