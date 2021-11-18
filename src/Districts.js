@@ -5,6 +5,7 @@ import mapboxgl from "mapbox-gl";
 import Chart from './BarChart';
 import * as d3 from 'd3';
 import { withStyles } from '@material-ui/core/styles';
+import './popup.css';
 
 const Districts = ({ classes }) => {
 //function Districts(props) {
@@ -41,7 +42,7 @@ const setHoveredDistrict = data => {
 
 const [hoveredMunP, _setHoveredMunP] = useState(null);
 const hoveredMunPRef = useRef(hoveredMunP);
-const [selectedDistrictP, _setSelectedDistrictP] = useState(null);
+const [selectedDistrictP, _setSelectedDistrictP] = useState("Actividades financieras");
 const selectedDistrictPRef = useRef(selectedDistrictP);
 
 var setHoveredMunP = data => {
@@ -494,6 +495,7 @@ const setUpData = (id) => {
         <div style={{ height: "100vh", width: "100vw"}} ref={mapContainer}></div>
 
       <div className={classes.chartContainer}>
+      <h2 className={classes.districtTitle} >{selectedDistrictP}</h2>
       {districtData.length !== 0 && (
           <Chart data={districtData}/>
           )}
@@ -519,10 +521,18 @@ const styles = () => ({
     height: '400px', 
     minHeight: '400px', 
     flex: 1, 
-    top: '-450px',
+    top: '-500px',
     position: 'relative',
-    background: "white"
-    //opacity: 0.8
+    background: "#E7E7E7",
+    opacity: 0.8
+  },
+  districtTitle: {
+    textAlign: 'center',
+    fontSize: 18,
+    fontWeight: 'bold',
+    paddingTop: '20px',
+    paddingBottom: '-20px',
+    color: 'black',
   },
 });
 

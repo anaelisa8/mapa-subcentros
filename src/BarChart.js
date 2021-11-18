@@ -1,11 +1,12 @@
 import React from 'react'
 import { ResponsiveBar } from '@nivo/bar'
 
-const colors = { 'Tipo 1': '#1d5c39','Tipo 2': "#FFDC00",'Tipo 3': '#e1e766', 'Tipo 4':'#0b548b','Tipo 5': '#98e5d8', 'Tipo 6':'#c015a2','Tipo 7':'#0097cd', 'Tipo 8':'#f4313e', 'Tipo 9':'#fd8204'}
+const colors = { 'Tipo 1': 'rgb(29, 92, 57, 0.75)','Tipo 2': "rgb(255, 220, 0,0.75)",'Tipo 3': 'rgb(225, 231, 102, 0.75)', 'Tipo 4':'rgb(11, 84, 139)','Tipo 5': 'rgb(152, 229, 216)', 'Tipo 6':'rgb(192, 21, 162, 0.75)','Tipo 7':'rgb(0, 151, 205, 0.75)', 'Tipo 8':'rgb(244, 49, 62, 0.75)', 'Tipo 9':'rgb(253, 130, 4, 0.75)'}
 const getColor = bar => colors[bar.id]
 const format = v => `${v}%`
 const theme = {
-    //background: "#222222",
+    background: "#E7E7E7",
+    //opacity: 0.8,
     axis: {
       fontSize: "14px",
       tickColor: "#eee",
@@ -44,6 +45,8 @@ const Chart = ({data}) => {
         labelFormat={format}
         tooltipFormat={format}
         theme={theme}
+        enableGridY={false}
+        layout="horizontal"
         defs={[
             {
                 id: 'dots',
@@ -85,18 +88,20 @@ const Chart = ({data}) => {
             tickSize: 5,
             tickPadding: 5,
             tickRotation: 0,
-            legend: 'Tipo de subcentro',
+            legend: 'Porcentaje empleos pertenecientes a cada tipo',
             legendPosition: 'middle',
             legendOffset: 40,
+            format
         }}
         axisLeft={{
             tickSize: 5,
             tickPadding: 5,
             tickRotation: 0,
             legend: 'Porcentaje empleos pertenecientes a cada tipo',
+            legend: 'Tipo de subcentro',
             legendPosition: 'middle',
             legendOffset: -50,
-            format
+            //format
         }}
         labelSkipWidth={12}
         labelSkipHeight={12}

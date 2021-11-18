@@ -1,0 +1,6 @@
+.myPopup .mapboxgl-popup-content {
+    background-color: #E7E7E7;
+}
+.myPopup .mapboxgl-popup-tip {
+    border-top-color:#E7E7E7;
+}

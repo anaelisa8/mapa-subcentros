@@ -24,7 +24,7 @@ function App() {
                 <td id="td1">Enfoque adicional en servicios profesionales y esparcimiento</td>
               </tr>
               <tr>
-              <td id="t2">3</td>
+              <td id="td2">3</td>
                 <td id="td2">Actividades financieras</td>
               </tr>
               <tr>
