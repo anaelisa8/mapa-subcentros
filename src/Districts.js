@@ -407,7 +407,7 @@ const setUpData = (id) => {
             }
 
           let _hoveredDistrict = e.features[0].id;
-          let _hoveredMunN = e.features[0].properties.lbls;
+          let _hoveredMunN = e.features[0].properties.Empleos;
           let _hoveredMunP = e.features[0].properties.Descripcion;
 
           var content = "<b>" + "Subcentro Urbano" + "</b>" + "<br>";
@@ -459,7 +459,7 @@ const setUpData = (id) => {
             }
 
         let _selectedDistrict = e.features[0].properties.lbls;
-        let _selectedDistrictN = e.features[0].properties.lbls;
+        let _selectedDistrictN = e.features[0].properties.Empleos;
         let _selectedDistrictP = e.features[0].properties.Descripcion;
 
         var content = "<b>" + "Subcentro Urbano" + "</b>" + "<br>";
@@ -509,12 +509,19 @@ const styles = () => ({
     width: '99vw',
   },
   chartContainer: {
-    height: '400px',
+    /*height: '400px',
     width: '600px',
     position: 'relative',
     top: '-500px',
     margin: '30px',
-    background: "white",
+    background: "white",*/
+    width: '40vw', 
+    height: '400px', 
+    minHeight: '400px', 
+    flex: 1, 
+    top: '-450px',
+    position: 'relative',
+    background: "white"
     //opacity: 0.8
   },
 });
