@@ -20,8 +20,8 @@ const Districts = ({ classes }) => {
     const [zoom, setZoom] = useState(4.5);
 */
 
-const [long, setLong] = useState(-100.3152586);
-const [lat, setLat] = useState(25.67);
+const [long, setLong] = useState(-100.356971);
+const [lat, setLat] = useState(25.665262);
 const [zoom, setZoom] = useState(12);
 
 const [districtData, setDistrictData] = useState([])
@@ -42,7 +42,7 @@ const setHoveredDistrict = data => {
 
 const [hoveredMunP, _setHoveredMunP] = useState(null);
 const hoveredMunPRef = useRef(hoveredMunP);
-const [selectedDistrictP, _setSelectedDistrictP] = useState("Actividades financieras");
+const [selectedDistrictP, _setSelectedDistrictP] = useState("Composición de subcentros urbanos por tipo de diversidad de empleo");
 const selectedDistrictPRef = useRef(selectedDistrictP);
 
 var setHoveredMunP = data => {
