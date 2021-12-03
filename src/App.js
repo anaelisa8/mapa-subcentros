@@ -1,7 +1,6 @@
 import React from "react";
-import Districts from "./Districts";
-import Deck from "./deck";
-import Chart from './BarChart';
+import Districts from "./Components/Districts";
+
 
 function App() {
   return (
