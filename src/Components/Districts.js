@@ -6,6 +6,7 @@ import Chart from "./BarChart";
 import * as d3 from "d3";
 import { withStyles } from "@material-ui/core/styles";
 import "../popup.css";
+import LegendChart from "./Legend/LegendChart";
 
 const Districts = ({ classes }) => {
   //function Districts(props) {
@@ -67,89 +68,8 @@ const Districts = ({ classes }) => {
     _setSelectedDistrictN(data);
   };
 
-  /*const setupGeoJson = () => {
-    console.log(subcentros)
-}*/
-
   var loadFiles = [d3.json(subcentros), d3.csv(subcentros_csv)];
 
-  //DATOS PIECHART
-  /*
-const setUpData = (id) => {
-  let _districtData = []
-  mergedGeoJSON.features.map(feature =>{
-    if(feature.properties.id == id){
-      if(feature.properties.TOPIC_0 >= 0){
-      _districtData.push({
-        "id": "TOPIC_0",
-        "label": "TOPIC_0",
-        "value": feature.properties.TOPIC_0,
-        "color": "hsl(8, 76%, 43%)"
-      })
-    }
-    if(feature.properties.TOPIC_2 >= 0){
-      _districtData.push({
-        "id": "TOPIC_2",
-        "label": "TOPIC_2",
-        "value": feature.properties.TOPIC_2,
-        "color": "hsl(8, 76%, 43%)"
-      })
-    }
-    if(feature.properties.TOPIC_4 >= 0){
-      _districtData.push({
-        "id": "TOPIC_4",
-        "label": "TOPIC_4",
-        "value": feature.properties.TOPIC_4,
-        "color": "hsl(8, 76%, 43%)"
-      })
-    }
-    if(feature.properties.TOPIC_5 >= 0){
-      _districtData.push({
-        "id": "TOPIC_5",
-        "label": "TOPIC_5",
-        "value": feature.properties.TOPIC_5,
-        "color": "hsl(8, 76%, 43%)"
-      })
-    }
-    if(feature.properties.TOPIC_7 >= 0){
-      _districtData.push({
-        "id": "TOPIC_7",
-        "label": "TOPIC_7",
-        "value": feature.properties.TOPIC_7,
-        "color": "hsl(8, 76%, 43%)"
-      })
-    }
-    if(feature.properties.TOPIC_9 >= 0){
-      _districtData.push({
-        "id": "TOPIC_9",
-        "label": "TOPIC_9",
-        "value": feature.properties.TOPIC_9,
-        "color": "hsl(8, 76%, 43%)"
-      })
-    }
-    if(feature.properties.TOPIC_11 >= 0){
-      _districtData.push({
-        "id": "TOPIC_11",
-        "label": "TOPIC_11",
-        "value": feature.properties.TOPIC_11,
-        "color": "hsl(8, 76%, 43%)"
-      })
-    }
-    if(feature.properties.TOPIC_12 >= 0){
-      _districtData.push({
-        "id": "TOPIC_12",
-        "label": "TOPIC_12",
-        "value": feature.properties.TOPIC_12,
-        "color": "hsl(8, 76%, 43%)"
-      })
-    }
-    }
-  })
-  //console.log(_districtData)
-  setDistrictData(_districtData)
-}
-*/
-  //DATOS BARCHAR
   const setUpData = (id) => {
     let _districtData = [];
     mergedGeoJSON.features.map((feature) => {
@@ -284,8 +204,8 @@ const setUpData = (id) => {
             "fill-opacity": [
               "case",
               ["boolean", ["feature-state", "hover"], false],
-              0.8,
-              0.55,
+              0.9,
+              0.63,
             ],
           },
         });
@@ -433,6 +353,7 @@ const setUpData = (id) => {
           <h2 className={classes.districtTitle}>{selectedDistrictP}</h2>
           {districtData.length !== 0 && <Chart data={districtData} />}
         </div>
+        <LegendChart />
       </div>
     </div>
   );

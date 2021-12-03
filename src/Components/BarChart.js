@@ -10,7 +10,7 @@ const colors = {
   "Tipo 6": "rgb(112, 34, 118, 0.65)",
   "Tipo 7": "rgb(0, 151, 205, 0.75)",
   "Tipo 8": "rgb(244, 49, 62, 0.75)",
-  "Tipo 9": "rgb(253, 130, 4, 0.75)",
+  "Tipo 9": "rgb(253, 130, 4, 0.9)",
 };
 const getColor = (bar) => colors[bar.id];
 const format = (v) => `${v}%`;
