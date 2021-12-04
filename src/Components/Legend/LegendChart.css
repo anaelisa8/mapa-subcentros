@@ -2,15 +2,14 @@
   position: fixed;
   top: 0;
   left: 0;
-  margin: 0 auto;
-  padding: 40px;
+  padding-top: 40px;
   max-width: 800px;
   font-size: 18px;
 }
 
 .table {
   margin: 0 0 40px 0;
-  width: 100%;
+  width: 35vw;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   display: table;
 }

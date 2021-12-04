@@ -365,14 +365,13 @@ const styles = () => ({
     width: "99vw",
   },
   chartContainer: {
-    width: "40vw",
+    width: "35vw",
     height: "400px",
     minHeight: "400px",
     flex: 1,
     top: "-500px",
     position: "relative",
     background: "#E7E7E7",
-    opacity: 0.8,
   },
   districtTitle: {
     textAlign: "center",
