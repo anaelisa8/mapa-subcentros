@@ -350,7 +350,7 @@ const Districts = ({ classes }) => {
         ></div>
 
         <div className={classes.chartContainer}>
-          <h2 className={classes.districtTitle}>{selectedDistrictP}</h2>
+          <h2 className={classes.districtTitle}>Tipo predominante: {selectedDistrictP}</h2>
           {districtData.length !== 0 && <Chart data={districtData} />}
         </div>
         <LegendChart />
