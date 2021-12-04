@@ -16,8 +16,8 @@ const getColor = (bar) => colors[bar.id];
 const format = (v) => `${v}%`;
 const theme = {
   background: "#E7E7E7",
+  fontSize: "16px",
   axis: {
-    fontSize: "14px",
     tickColor: "#eee",
     ticks: {
       line: {
