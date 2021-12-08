@@ -350,12 +350,11 @@ const Districts = ({ classes }) => {
           style={{ height: "100vh", width: "100vw" }}
           ref={mapContainer}
         ></div>
-
+          <LegendChart />
         <div className={classes.chartContainer}>
           <h2 className={classes.districtTitle}>Tipo predominante: {selectedDistrictP}</h2>
           {districtData.length !== 0 && <Chart data={districtData} />}
         </div>
-        <LegendChart />
       </div>
     </div>
   );
