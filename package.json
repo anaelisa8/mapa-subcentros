@@ -16,10 +16,10 @@
     "deck.gl": "^8.5.10",
     "mapbox-gl": "^1.9.1",
     "nivo": "^0.31.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
     "react-map-gl": "^6.1.17",
-    "react-scripts": "3.4.1"
+    "react-scripts": "^3.4.4"
   },
   "scripts": {
     "start": "react-scripts start",

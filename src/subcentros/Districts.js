@@ -11,7 +11,8 @@ import LegendChart from "./Legend/LegendChart";
 const Districts = ({ classes }) => {
   //function Districts(props) {
   //Assign the Mapbox token from the environment variable set in .env
-  mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_KEY;
+  //mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_KEY;
+  mapboxgl.accessToken = "pk.eyJ1IjoiamF2aWVyYWdvc3RpbmkiLCJhIjoiY2twNmRtMGRqMHNnbTJ1b3d6aWZybGFxZCJ9.NpSztHM_17VTnZASNPzKHg";
   //mapboxgl.accessToken = process.env.REACT_APP_MAP_BOX_API_KEY;
 
   const mapContainer = useRef(null);
@@ -138,7 +139,8 @@ const Districts = ({ classes }) => {
     let map = new mapboxgl.Map({
       container: mapContainer.current,
 
-      style: "mapbox://styles/mapbox/light-v8",
+      //style: "mapbox://styles/mapbox/light-v8",
+      style:"mapbox://styles/javieragostini/ckuszjuu92llh17l8h62i1o61",
       center: [long, lat],
       zoom: zoom,
     });
@@ -348,12 +350,11 @@ const Districts = ({ classes }) => {
           style={{ height: "100vh", width: "100vw" }}
           ref={mapContainer}
         ></div>
-
+          <LegendChart />
         <div className={classes.chartContainer}>
           <h2 className={classes.districtTitle}>Tipo predominante: {selectedDistrictP}</h2>
           {districtData.length !== 0 && <Chart data={districtData} />}
         </div>
-        <LegendChart />
       </div>
     </div>
   );
